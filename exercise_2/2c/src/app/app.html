@@ -1,0 +1,13 @@
+<h4>current choice is {{c}}</h4> 
+<div [ngSwitch]="c"> 
+<p *ngSwitchCase="0">Start </p> 
+<p *ngSwitchCase="1">HTML</p> 
+<p *ngSwitchCase="2">CSS</p> 
+<p *ngSwitchCase="3">Javascript</p> 
+<p *ngSwitchCase="4">Typescript</p>
+<p *ngSwitchCase="5">Angular</p> 
+<p *ngSwitchCase="6">Exit</p> 
+</div> 
+<div> 
+<button (click)="nextChoice()"> Next</button> 
+</div> 
