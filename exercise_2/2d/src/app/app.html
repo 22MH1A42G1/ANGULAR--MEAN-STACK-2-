@@ -1,0 +1,6 @@
+<h3>Structural Directive with exportAs property</h3>
+<ng-template appRepeat #rd="repeat">
+	<p>I am being repeated...</p>
+</ng-template>
+<button (click)="rd.repeatElement(5)">Repeat Element</button>
+<button (click)="rd.changeElementText(5)">Change Text</button>
