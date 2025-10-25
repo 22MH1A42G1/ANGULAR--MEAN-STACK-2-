@@ -17,6 +17,10 @@ npm install -g @angular/cli
 ```
 ng new 1a --no-standalone
 ```
+after click 
+> css rendering - n
+> zoneless application - y
+
 # Enter project folder
 ```
 cd 1a
