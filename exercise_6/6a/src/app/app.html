@@ -1,0 +1,8 @@
+<h2>Course Details</h2> 
+Select a course to view 
+<select #course (change)="name = course.value"> 
+<option value="Node JS">Node JS</option> 
+<option value="Typescript">Typescript</option> 
+<option value="Angular">Angular</option> 
+<option value="React JS">React JS</option></select><br /><br /> 
+<app-courses-list [cName]="name"></app-courses-list> 
