@@ -1,0 +1,47 @@
+<div class="container"> 
+ <h1>Registration Form</h1> 
+ <form [formGroup]="registerForm"> 
+ <div class="form-group"> 
+ <label>First Name</label> 
+ <input type="text" class="form-control" formControlName="firstName"> 
+ <div *ngIf="registerForm.controls['firstName'].errors" class="alert alertdanger"> 
+ Firstname field is invalid. 
+ <p *ngIf="registerForm.controls['firstName'].errors?.['required']"> 
+ This field is required! 
+ </p> 
+ </div> 
+ </div> 
+ <div class="form-group"> 
+ <label>Last Name</label> 
+ <input type="text" class="form-control" formControlName="lastName"> 
+ <div *ngIf="registerForm.controls['lastName'].errors" class="alert alert-danger"> 
+Lastname field is invalid. 
+<p *ngIf="registerForm.controls['lastName'].errors?.['required']"> 
+ This field is required! 
+</p> 
+</div> 
+</div> 
+<div class="form-group"> 
+<fieldset formGroupName="address"> 
+ <legend>Address:</legend> 
+ <label>Street</label> 
+<input type="text" class="form-control" formControlName="street"> 
+<label>Zip</label> 
+<input type="text" class="form-control" formControlName="zip"> 
+<label>City</label> 
+<input type="text" class="form-control" formControlName="city"> 
+</fieldset> 
+</div> 
+<button type="submit" class="btn btn-primary" 
+(click)="submitted=true">Submit</button> 
+ </form> 
+ <br/> 
+ <div [hidden]="!submitted"> 
+ <h3> Employee Details </h3> 
+ <p>First Name: {{ registerForm.get('firstName')?.value }} </p> 
+ <p> Last Name: {{ registerForm.get('lastName')?.value }} </p> 
+ <p> Street: {{ registerForm.get('address.street')?.value }}</p> 
+ <p> Zip: {{ registerForm.get('address.zip')?.value }} </p> 
+ <p> City: {{ registerForm.get('address.city')?.value }}</p> 
+</div> 
+</div> 
